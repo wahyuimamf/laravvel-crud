@@ -1,5 +1,5 @@
 <h1>HELLO WORLD!!</h1>
-<table>
+<table style="width:100%">
 <tr>
     <th>NAMA LENGKAP</th>
     <th>NIM</th>
@@ -16,19 +16,39 @@
 @endforeach
 </table>
 
-<button type="button">Tambah data</button>
-
-
+<table>
+<form action="/mahasiswa/create" method="POST">
+{{csrf_field()}}
+    <tr>
+        <td>Nama Lengkap</td>
+        <td><INPUT type="text" name="nama_lengkap"/></td>
+    </tr><br>
+    <tr>
+        <td>NIM</td>
+        <td><INPUT type="text" name="nim"/></td>
+    </tr><br>
+    <tr>
+        <td>Alamat</td>
+        <td><INPUT type="text" name="alamat"/></td>
+    </tr><br>
+    <tr>
+        <td>Email</td>
+        <td><INPUT type="text" name="email"/></td>
+    </tr><br>
+<tr>
+    <td></td>
+    <td><button>TAMBAH DATA</button></td>
+</tr>
+</form>
+</table>
 
 
 <style>
-        h1 {
+        h1, h2 {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
         }
-table {
-    width:100%;
-}
+
         table,
         th,
         td {
