@@ -11,4 +11,10 @@ class mahasiswacontroller extends Controller
         $data_mahasiswa = \App\mahasiswa::all();
         return view('mahasiswa.index',['data_mahasiswa' => $data_mahasiswa]);
     }
+
+    public function create(request $request)
+    {
+        \App\mahasiswa::create($request->all());
+        return redirect('/mahasiswa');
+    }
 }
