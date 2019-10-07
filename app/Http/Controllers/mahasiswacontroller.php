@@ -15,6 +15,6 @@ class mahasiswacontroller extends Controller
     public function create(request $request)
     {
         \App\mahasiswa::create($request->all());
-        return redirect('/mahasiswa');
+        return redirect('/mahasiswa')->with('Sukses','Data Berhasil disimpan');
     }
 }

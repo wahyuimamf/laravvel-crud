@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUD LARAVEL</title>
+</head>
+<body>
 <h1>HELLO WORLD!!</h1>
 <table style="width:100%">
 <tr>
@@ -41,7 +50,13 @@
 </tr>
 </form>
 </table>
-
+@if(session('Sukses'))
+<div>Data Berhasil disimpan
+{{session('Sukses')}};
+</div>
+@endif
+</body>
+</html>
 
 <style>
         h1, h2 {
