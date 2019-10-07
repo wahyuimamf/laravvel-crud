@@ -15,3 +15,31 @@
 </tr>
 @endforeach
 </table>
+
+<button type="button">Tambah data</button>
+
+
+
+
+<style>
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+table {
+    width:100%;
+}
+        table,
+        th,
+        td {
+            
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
