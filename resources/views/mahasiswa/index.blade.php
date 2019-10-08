@@ -65,9 +65,11 @@
     </form>
 </table>
 
+<div class="alert alert-danger">
 @if(session('Sukses'))
 {{session('Sukses')}};
 @endif
+</div>
 
 @if ($errors->any())
     <div class="alert alert-danger">
