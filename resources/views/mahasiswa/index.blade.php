@@ -14,6 +14,7 @@
     <th>NIM</th>
     <th>Alamat</th>
     <th>Email</th>
+    <th>AKSI</th>
 </tr>
 @foreach($data_mahasiswa as $mahasiswa)
 <tr>
@@ -21,6 +22,7 @@
     <td>{{$mahasiswa->nim}}</td>
     <td>{{$mahasiswa->alamat}}</td>
     <td>{{$mahasiswa->email}}</td>
+    <td><a href="/mahasiswa/{{$mahasiswa->id}}/edit">EDIT </a></td>
 </tr>
 @endforeach
 </table>
