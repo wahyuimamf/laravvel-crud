@@ -8,67 +8,76 @@
     <title>CRUD LARAVEL</title>
 </head>
 <body>
-        <div class="container">
-                <div class="row">
-                    <div class="col-6">
+     <div class="container">
+        <div class="row">
+            <div class="col-6">
                         <h1>DATA MAHASISWA</h1>
-                    </div>
+             </div>
 <table class="table">
-<tr>
-    <th>NAMA LENGKAP</th>
-    <th>NIM</th>
-    <th>Alamat</th>
-    <th>Email</th>
-    <th>AKSI</th>
-</tr>
-@foreach($data_mahasiswa as $mahasiswa)
-<tr>
-    <td>{{$mahasiswa->nama_lengkap}}</td>
-    <td>{{$mahasiswa->nim}}</td>
-    <td>{{$mahasiswa->alamat}}</td>
-    <td>{{$mahasiswa->email}}</td>
-  
-    <td><a href="/mahasiswa/{{$mahasiswa->id}}/edit">EDIT </a>
-    <a href="/mahasiswa/{{$mahasiswa->id}}/delete">Delete </a></td>
-   
-</tr>
-@endforeach
+        <tr>
+            <th>NAMA LENGKAP</th>
+            <th>NIM</th>
+            <th>Alamat</th>
+            <th>Email</th>
+            <th>AKSI</th>
+        </tr>
+    @foreach($data_mahasiswa as $mahasiswa)
+        <tr>
+            <td>{{$mahasiswa->nama_lengkap}}</td>
+            <td>{{$mahasiswa->nim}}</td>
+            <td>{{$mahasiswa->alamat}}</td>
+            <td>{{$mahasiswa->email}}</td>
+            <td>
+                <a class="btn btn-primary" href="/mahasiswa/{{$mahasiswa->id}}/edit" role="button">EDIT</a>
+                <a class="btn btn-primary" href="/mahasiswa/{{$mahasiswa->id}}/delete" role="button">DELETE</a>
+            </tr>
+    @endforeach
+        </div>
+    </div>
 </table>
 
 
-<div class="col-6">
-    <h1>Tambah Data</h1>
-</div>
+        <div class="col-6">
+            <h2>Tambah Data</h2>
+        </div>
 <table class="table">
-<form action="/mahasiswa/create" method="POST">
-{{csrf_field()}}
-    <tr>
-        <td>Nama Lengkap</td>
-        <td><INPUT type="text" name="nama_lengkap"/></td>
-    </tr><br>
-    <tr>
-        <td>NIM</td>
-        <td><INPUT type="text" name="nim"/></td>
-    </tr><br>
-    <tr>
-        <td>Alamat</td>
-        <td><INPUT type="text" name="alamat"/></td>
-    </tr><br>
-    <tr>
-        <td>Email</td>
-        <td><INPUT type="text" name="email"/></td>
-    </tr><br>
+    <form action="/mahasiswa/create" method="POST">
+    {{csrf_field()}}
+        <tr>
+            <td>Nama Lengkap</td>
+            <td><INPUT type="text" name="nama_lengkap"/></td>
+        </tr><br>
+        <tr>
+            <td>NIM</td>
+            <td><INPUT type="text" name="nim"/></td>
+        </tr><br>
+        <tr>
+            <td>Alamat</td>
+            <td><INPUT type="text" name="alamat"/></td>
+        </tr><br>
+        <tr>
+            <td>Email</td>
+            <td><INPUT type="text" name="email"/></td>
+        </tr>
 <tr>
-    <td></td>
-    <td><button>TAMBAH DATA</button></td>
+    <td><button class="btn btn-primary">TAMBAH DATA</button></td>
 </tr>
     </form>
 </table>
+
 @if(session('Sukses'))
-<div>Data Berhasil disimpan
 {{session('Sukses')}};
 @endif
 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 </body>
 </html>
