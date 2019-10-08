@@ -18,3 +18,4 @@ route::get('/mahasiswa', 'mahasiswacontroller@index');
 route::post('/mahasiswa/create', 'mahasiswacontroller@create');
 route::get('/mahasiswa/{id}/edit','mahasiswacontroller@edit');
 route::post('/mahasiswa/{id}/update','mahasiswacontroller@update');
+route::get('/mahasiswa/{id}/delete','mahasiswacontroller@delete');

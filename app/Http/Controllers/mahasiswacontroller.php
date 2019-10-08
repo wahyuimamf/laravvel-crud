@@ -30,4 +30,11 @@ class mahasiswacontroller extends Controller
         $mahasiswa->update($request->all());
         return redirect('/mahasiswa')->with('Sukses','Data Berhasil Di-Update');
     }
+
+    public function delete($id)
+    {
+        $mahasiswa = \App\mahasiswa::find($id);
+        $mahasiswa->delete($mahasiswa);
+        return redirect('/mahasiswa')->with('Sukses','Data Berhasil di hapus');
+    }
 }

@@ -22,7 +22,10 @@
     <td>{{$mahasiswa->nim}}</td>
     <td>{{$mahasiswa->alamat}}</td>
     <td>{{$mahasiswa->email}}</td>
-    <td><a href="/mahasiswa/{{$mahasiswa->id}}/edit">EDIT </a></td>
+  
+    <td><a href="/mahasiswa/{{$mahasiswa->id}}/edit">EDIT </a>
+    <a href="/mahasiswa/{{$mahasiswa->id}}/delete">Delete </a></td>
+   
 </tr>
 @endforeach
 </table>
